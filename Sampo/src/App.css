@@ -1,0 +1,18 @@
+.card{
+    width: 140px;
+    height: 220px;
+    background-color:rgb(171, 171, 171);
+    border: 2px solid black;
+    box-shadow: 30px 30px 30px 10px gray;
+}
+
+.stat-list{
+    margin: 0;
+    padding: 0 8px;
+  }
+
+  .stat-list-item{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }

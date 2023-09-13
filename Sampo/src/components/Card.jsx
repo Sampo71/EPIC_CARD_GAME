@@ -1,20 +1,20 @@
 
-export default function Card(){
+export default function Card({card}){
     return(
-        <div>
-            <img src = "http://placekitten.com/120/100"/>
-            <ul>
-                <li>
-                <span>scratch </span>
-                <span>9</span>
+        <div className="card">
+            <img src = {card.image}/>
+            <ul className="stat-list">
+                <li className="stat-list-item">
+                <span>{card.stats[0].name} </span>
+                <span>{card.stats[0].value}</span>
                 </li>
                 <li>
                     <span>cuteness </span>
-                    <span>1</span>
+                    <span>15</span>
                 </li>
                 <li>
                     <span>weight </span>
-                    <span>2</span>
+                    <span>20</span>
                 </li>
             </ul>
        
