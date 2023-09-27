@@ -18,3 +18,15 @@
     display: flex;
     justify-content: space-between;
   }
+
+  .Game{
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+  }
+
+.center-area{
+  text-align: center;
+  align-self: center;
+  min-width: 20vw;
+}
