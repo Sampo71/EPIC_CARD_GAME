@@ -61,14 +61,32 @@ export default function App(){
     <>
     <h1>EPIC_CARD_GAME!</h1>
     <div className='Game'>
-      <Card card = {cards.player[0]}/>
-
+      <div className='hand player'>
+        <ul className='card-list'>
+          {cards.player.map(pCard =>(
+            <li className='card-list-item-player' key={pCard.id}>
+              <Card card = {pCard}/>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
       <div className='center-area'>
         <p>{result || ''}</p>
         <button onClick={compareCards} type="button">play</button>
       </div>
 
-      <Card card = {cards.opponent[0]}/>
+      <div className='hand opponent'>
+        <ul className='card-list'>
+          {cards.opponent.map(oCard =>(
+           <li className='card-list-item-opponent' key={oCard.id}>
+             <Card card = {oCard}/>
+            </li>
+           ))}
+          </ul>
+       </div>
+       
+
       {console.log(dealCards())}
     </div>
     </>
