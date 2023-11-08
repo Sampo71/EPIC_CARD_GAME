@@ -1,13 +1,13 @@
 
-export default function Card({card}){
-  if(!card)  return<div className="card back"/>
-
+export default function Card({card,selectedStat,handleSelect}){
+  if(!card)  return<div className="card back">
+</div>
     return(
         <div className="card">
             <img src = {card.image}/>
             <ul className="stat-list">
                 {card.stats.map((stat,index) =>(
-                <li className="stat-list-item" key={index}>
+                <li className="stat-list-item" onClick={()=> handleSelect(index)} key={index}>
                 <span>{stat.name} </span>
                 <span>{stat.value}</span>
                 </li>
@@ -16,5 +16,6 @@ export default function Card({card}){
             </ul>
        
         </div>
+
     );
 }
