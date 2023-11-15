@@ -25,6 +25,16 @@
     justify-content: space-between;
   }
 
+  .stat-list-item.selected{
+    outline: 1px;
+    background-color: #ffffff;
+  }
+
+  .card-list-item.player .stat-list-item:hover{
+    outline: 1px dashed black;
+    background-color: #ffffff;
+  }
+
   .Game{
     display: flex;
     justify-content: center;
@@ -47,7 +57,7 @@
   direction: rtl;
 }
 
-.card-list-item-player{
+.card-list-item.player{
   margin-left: calc(2vw - 169px)
 }
 

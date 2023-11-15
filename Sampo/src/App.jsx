@@ -52,6 +52,10 @@ export default function App(){
   const[gameState, setGameState] = useState('play');
   const[selectedStat, setSelected] =useState(0);
 
+  if(gameState !== 'game_over' && (!cards.opponent.length || !cards.player.length)){
+
+  }
+
   function compareCards(){
     const playerStat = cards.player[0].stats[selectedStat];
     const opponentStat = cards.opponent[0].stats[selectedStat];
@@ -99,6 +103,12 @@ export default function App(){
     setResult('')
   }
 
+  function restartGame(){
+    setCards(dealCards);
+    setResult('');
+    setGameState('play');
+  }
+
   return(
     <>
     <h1>EPIC_CARD_GAME!</h1>
@@ -106,12 +116,12 @@ export default function App(){
       <div className='hand player'>
         <ul className='card-list'>
           {cards.player.map((pCard,index) =>(
-            <li className='card-list-item-player' key={pCard.id}>
-              <Card card = { index === 0 ? pCard : null}
-              handleSelect={statIndex => gamestate ==='play' && setSelected(statIndex)}
-              selectedStat={selectedStat}
-              />
-            </li>
+          <li className='card-list-item player' key={pCard.id}>
+           <Card card={ index === 0 ? pCard : null}
+           handleSelect={statIndex => gameState ==='play' && setSelected(statIndex)}
+           selectedStat={selectedStat}
+         />
+    </li>
           ))}
         </ul>
       </div>
@@ -120,7 +130,8 @@ export default function App(){
         <p>{result || ''}</p>
         {
           gameState === 'play' ? (<PlayButton text={'Play'} handleClick={compareCards}/>)
-           : (<PlayButton text={'Next'} handleClick={nextRound}/>)
+          : gameState === 'game_over' ? (<playbutton text={Restart} handleClick={restartGame}/>) :
+          (<PlayButton text={'Next'} handleClick={nextRound}/>)
         }
         
       </div>
@@ -134,7 +145,6 @@ export default function App(){
            ))}
           </ul>
        </div>
-       {console.log(deck)}
     </div>
     </>
   );
