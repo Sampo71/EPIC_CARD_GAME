@@ -27,12 +27,12 @@
 
   .stat-list-item.selected{
     outline: 1px;
-    background-color: #ffffff;
+    background-color: #707070;
   }
 
   .card-list-item.player .stat-list-item:hover{
     outline: 1px dashed black;
-    background-color: #ffffff;
+    background-color: #8f8f8f;
   }
 
   .Game{
@@ -71,4 +71,10 @@
   height:40px;
   font-size: larger;
   font-weight:bolder; 
+}
+
+.hand{
+  display: flex;
+  flex-direction: column;
+  min-width: 30vw;
 }
