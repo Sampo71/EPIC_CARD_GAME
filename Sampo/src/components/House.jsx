@@ -3,8 +3,9 @@ import '../App.css';
 
 const Home = ()=>{
     return(
-        <div>
+        <div className="homePage">
             <h1>Hello world</h1>
+            <button> Pointless button</button>
         </div>
     )
 }

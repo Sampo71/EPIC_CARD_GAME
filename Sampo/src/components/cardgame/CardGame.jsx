@@ -1,7 +1,6 @@
-import './App.css'
-import Card from './components/Card'
+import Card from './Card'
+import PlayButton from './PlayButton';
 import { useState } from 'react';
-import PlayButton from './components/PlayButton';
 
 const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min +1) + min);
 
@@ -45,7 +44,7 @@ function shuffle(array){
   return array;
 }
 
-export default function App(){
+export default function CardGame(){
 
   const [result, setResult] = useState('');
   const [cards, setCards] = useState(dealCards)
